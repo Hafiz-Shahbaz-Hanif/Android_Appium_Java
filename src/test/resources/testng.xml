@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Android Regression" verbose="1">
+
+    <listeners>
+        <listener class-name="com.hafiz.mobile.listeners.TestListener"/>
+    </listeners>
+
+    <!-- One emulator: run serially. For a device farm, split into parallel <test> blocks. -->
+    <test name="android">
+        <classes>
+            <class name="com.hafiz.mobile.tests.ApiDemosTest"/>
+            <class name="com.hafiz.mobile.tests.WikipediaTest"/>
+        </classes>
+    </test>
+</suite>
