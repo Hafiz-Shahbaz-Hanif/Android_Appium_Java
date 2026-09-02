@@ -6,11 +6,33 @@
         <listener class-name="com.hafiz.mobile.listeners.TestListener"/>
     </listeners>
 
-    <!-- One emulator: run serially. For a device farm, split into parallel <test> blocks. -->
-    <test name="android">
+    <!--
+      One emulator: run serially. For a device farm, split the <test> blocks and
+      set parallel="tests" with a thread-count matching the number of devices.
+    -->
+    <test name="apidemos">
         <classes>
-            <class name="com.hafiz.mobile.tests.ApiDemosTest"/>
-            <class name="com.hafiz.mobile.tests.WikipediaTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.TopLevelMenuTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.LeafScreenNavigationTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.ApiDemosTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.ControlsWidgetTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.SeekBarTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.ChronometerTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.SpinnerTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.RadioGroupTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.ExpandableListsTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.PopupMenuTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.DateWidgetsTest"/>
+            <class name="com.hafiz.mobile.tests.apidemos.AlertDialogsTest"/>
+        </classes>
+    </test>
+
+    <test name="wikipedia">
+        <classes>
+            <class name="com.hafiz.mobile.tests.wikipedia.WikipediaTest"/>
+            <class name="com.hafiz.mobile.tests.wikipedia.WikipediaSearchTest"/>
+            <class name="com.hafiz.mobile.tests.wikipedia.WikipediaArticleTest"/>
+            <class name="com.hafiz.mobile.tests.wikipedia.WikipediaNavigationTest"/>
         </classes>
     </test>
 </suite>

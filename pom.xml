@@ -97,5 +97,17 @@
                 <suite.file>src/test/resources/smoke.xml</suite.file>
             </properties>
         </profile>
+        <profile>
+            <id>apidemos</id>
+            <properties>
+                <suite.file>src/test/resources/apidemos.xml</suite.file>
+            </properties>
+        </profile>
+        <profile>
+            <id>wikipedia</id>
+            <properties>
+                <suite.file>src/test/resources/wikipedia.xml</suite.file>
+            </properties>
+        </profile>
     </profiles>
 </project>

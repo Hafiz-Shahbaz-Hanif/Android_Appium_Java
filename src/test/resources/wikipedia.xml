@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Smoke" verbose="1">
+<suite name="Wikipedia" verbose="1">
 
     <listeners>
         <listener class-name="com.hafiz.mobile.listeners.TestListener"/>
     </listeners>
 
-    <test name="smoke">
+    <test name="wikipedia">
         <groups>
-            <run><include name="smoke"/></run>
+            <run><include name="wikipedia"/></run>
         </groups>
         <packages>
-            <package name="com.hafiz.mobile.tests.*"/>
+            <package name="com.hafiz.mobile.tests.wikipedia"/>
         </packages>
     </test>
 </suite>
