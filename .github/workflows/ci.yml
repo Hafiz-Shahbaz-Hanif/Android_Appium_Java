@@ -54,13 +54,24 @@ jobs:
           echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
           sudo udevadm control --reload-rules && sudo udevadm trigger --name-match=kvm
 
-      - name: Run TestNG suite on emulator
+      # ApiDemos is the verification gate - a stable, versioned sample app.
+      - name: Run ApiDemos suite on emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
           arch: x86_64
           profile: pixel_5
-          script: ./mvnw -B test
+          script: ./mvnw -B test -Papidemos
+
+      # Wikipedia ships a new APK often; keep its result visible but non-blocking.
+      - name: Run Wikipedia suite on emulator
+        continue-on-error: true
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          arch: x86_64
+          profile: pixel_5
+          script: ./mvnw -B test -Pwikipedia
 
       - name: Upload report + screenshots
         if: always()
