@@ -31,8 +31,12 @@ Appium server and **ExtentReports** reporting.
   provider instead.
 - **Screen Object Model.** Every screen declares `@AndroidFindBy` fields; tests call
   intent-revealing methods and `UiScrollable` navigation is encapsulated in the page.
-- **Two real apps.** ApiDemos for native widgets, dialogs and scrollable-list navigation;
-  the production Wikipedia app for a search → article → save-to-reading-list journey.
+- **Two real apps, 150+ test cases.** ApiDemos for native widgets, dialogs and
+  data-driven scrollable-list navigation across the whole screen tree; the production
+  Wikipedia app for search → article → save, find-in-page and bottom-nav journeys.
+- **AI-assisted workflow.** [`CLAUDE.md`](CLAUDE.md) plus the subagents and skills in
+  [`.claude/`](.claude) drive screen-object drafting, failure triage and diff review
+  against the framework conventions.
 - **App abstraction.** `AppUnderTest` maps each app to its APK, package and activity; the
   driver installs the APK from `apps/` or falls back to launching an installed package.
 - **Reporting + triage.** A TestNG `ITestListener` builds an ExtentReports node per test
@@ -55,10 +59,25 @@ Appium server and **ExtentReports** reporting.
 bash scripts/fetch-apps.sh          # or: pwsh scripts/fetch-apps.ps1
 
 # 2. start an emulator (or plug in a device), then
-./mvnw test                          # full suite
+./mvnw test                          # full suite (testng.xml)
 ./mvnw test -Psmoke                   # @smoke group only
+./mvnw test -Papidemos               # ApiDemos suite only
+./mvnw test -Pwikipedia              # Wikipedia suite only
+./mvnw -q test-compile               # what a machine without an SDK can do
 ./mvnw test -Dappium.server.url=http://127.0.0.1:4723
 ```
+
+## Test coverage
+
+| Area | Classes | Cases |
+|---|---|---|
+| ApiDemos — screen-tree navigation | `TopLevelMenuTest`, `LeafScreenNavigationTest` | 80 |
+| ApiDemos — widgets & dialogs | `ControlsWidgetTest`, `SeekBarTest`, `ChronometerTest`, `SpinnerTest`, `RadioGroupTest`, `ExpandableListsTest`, `PopupMenuTest`, `DateWidgetsTest`, `AlertDialogsTest`, `ApiDemosTest` | 56 |
+| Wikipedia — search, article, navigation | `WikipediaSearchTest`, `WikipediaArticleTest`, `WikipediaNavigationTest`, `WikipediaTest` | 16 |
+| **Total** | | **150+** |
+
+Data-driven cases use TestNG `@DataProvider`; navigation is by visible text + `UiScrollable`,
+never by index or coordinates.
 
 ## Project structure
 
@@ -71,13 +90,17 @@ src/test/java/com/hafiz/mobile/
 │   └── AppUnderTest.java             # apk / package / activity per app
 ├── pages/
 │   ├── BasePage.java                 # AppiumFieldDecorator init + helpers
+│   ├── Navigator.java                # ApiDemos text-based screen-tree navigation
 │   ├── apidemos/                     # ApiDemos screen objects
 │   └── wikipedia/                    # Wikipedia screen objects
 ├── listeners/                        # ExtentReports + failure screenshots
 ├── base/BaseTest.java                # server + session lifecycle
-└── tests/                            # ApiDemosTest, WikipediaTest
+└── tests/
+    ├── apidemos/                     # navigation + widget + dialog suites
+    └── wikipedia/                    # search + article + navigation suites
 apps/                                 # APKs (downloaded, not committed)
 scripts/fetch-apps.{sh,ps1}
+.claude/                              # agents + skills for the AI-assisted workflow
 ```
 
 ## Reports
