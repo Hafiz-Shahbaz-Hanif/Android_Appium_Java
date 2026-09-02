@@ -1,4 +1,4 @@
-package com.hafiz.mobile.tests;
+package com.hafiz.mobile.tests.wikipedia;
 
 import static org.testng.Assert.assertTrue;
 

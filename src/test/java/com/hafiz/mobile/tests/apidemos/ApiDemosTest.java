@@ -1,4 +1,4 @@
-package com.hafiz.mobile.tests;
+package com.hafiz.mobile.tests.apidemos;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotEquals;
