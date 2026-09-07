@@ -67,6 +67,9 @@ bash scripts/fetch-apps.sh          # or: pwsh scripts/fetch-apps.ps1
 ./mvnw test -Dappium.server.url=http://127.0.0.1:4723
 ```
 
+Or via the `Makefile`: `make apps`, `make compile`, `make smoke`, `make apidemos`,
+`make wikipedia`, `make test` (`make help` lists them).
+
 ## Test coverage
 
 | Area | Classes | Cases |
