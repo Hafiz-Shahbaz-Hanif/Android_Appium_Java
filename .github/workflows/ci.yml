@@ -73,6 +73,14 @@ jobs:
           profile: pixel_5
           script: ./mvnw -B test -Pwikipedia
 
+      - name: Publish TestNG results
+        if: always()
+        uses: mikepenz/action-junit-report@v5
+        with:
+          report_paths: target/surefire-reports/TEST-*.xml
+          check_name: "TestNG results (API ${{ matrix.api-level }})"
+          fail_on_failure: false
+
       - name: Upload report + screenshots
         if: always()
         uses: actions/upload-artifact@v4
