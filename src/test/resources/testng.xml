@@ -33,6 +33,7 @@
             <class name="com.hafiz.mobile.tests.wikipedia.WikipediaSearchTest"/>
             <class name="com.hafiz.mobile.tests.wikipedia.WikipediaArticleTest"/>
             <class name="com.hafiz.mobile.tests.wikipedia.WikipediaNavigationTest"/>
+            <class name="com.hafiz.mobile.tests.wikipedia.WikipediaSavedTest"/>
         </classes>
     </test>
 </suite>
