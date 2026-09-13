@@ -112,6 +112,8 @@ scripts/fetch-apps.{sh,ps1}
 - **TestNG:** `target/surefire-reports/`
 - **Failure screenshots:** `target/screenshots/`
 
+See [`CHANGELOG.md`](CHANGELOG.md) for what shipped and when.
+
 ---
 
 ## Author
