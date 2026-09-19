@@ -18,7 +18,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <appium.java-client.version>9.4.0</appium.java-client.version>
+        <appium.java-client.version>10.1.1</appium.java-client.version>
         <!-- Pinned: appium java-client 9.4.0 still references Selenium's html5 /
              ContextAware APIs, which were removed in Selenium 4.34. -->
         <selenium.version>4.33.0</selenium.version>
