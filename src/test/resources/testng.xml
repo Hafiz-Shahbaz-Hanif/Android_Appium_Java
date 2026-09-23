@@ -34,6 +34,7 @@
             <class name="com.hafiz.mobile.tests.wikipedia.WikipediaArticleTest"/>
             <class name="com.hafiz.mobile.tests.wikipedia.WikipediaNavigationTest"/>
             <class name="com.hafiz.mobile.tests.wikipedia.WikipediaSavedTest"/>
+            <class name="com.hafiz.mobile.tests.wikipedia.WikipediaSettingsTest"/>
         </classes>
     </test>
 </suite>

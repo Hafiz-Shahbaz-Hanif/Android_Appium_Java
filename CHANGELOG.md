@@ -2,6 +2,13 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-23
+
+### Added
+- `WikipediaSettingsScreen` + a test: Settings opens from the Explore overflow
+  menu and shows a known section. Compile-verified only, like the rest of this
+  suite — the CI emulator job is the real gate.
+
 ## 2026-09-22
 
 ### Added

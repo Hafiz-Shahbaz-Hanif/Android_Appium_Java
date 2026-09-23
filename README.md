@@ -76,7 +76,7 @@ Or via the `Makefile`: `make apps`, `make compile`, `make smoke`, `make apidemos
 |---|---|---|
 | ApiDemos — screen-tree navigation | `TopLevelMenuTest`, `LeafScreenNavigationTest` | 80 |
 | ApiDemos — widgets & dialogs | `ControlsWidgetTest`, `SeekBarTest`, `ChronometerTest`, `SpinnerTest`, `RadioGroupTest`, `ExpandableListsTest`, `PopupMenuTest`, `DateWidgetsTest`, `AlertDialogsTest`, `ApiDemosTest` | 56 |
-| Wikipedia — search, article, navigation, saved | `WikipediaSearchTest`, `WikipediaArticleTest`, `WikipediaNavigationTest`, `WikipediaSavedTest`, `WikipediaTest` | 17 |
+| Wikipedia — search, article, navigation, saved, settings | `WikipediaSearchTest`, `WikipediaArticleTest`, `WikipediaNavigationTest`, `WikipediaSavedTest`, `WikipediaSettingsTest`, `WikipediaTest` | 18 |
 | **Total** | | **150+** |
 
 Data-driven cases use TestNG `@DataProvider`; navigation is by visible text + `UiScrollable`,
