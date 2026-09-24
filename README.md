@@ -31,7 +31,7 @@ Appium server and **ExtentReports** reporting.
   provider instead.
 - **Screen Object Model.** Every screen declares `@AndroidFindBy` fields; tests call
   intent-revealing methods and `UiScrollable` navigation is encapsulated in the page.
-- **Two real apps, 150+ test cases.** ApiDemos for native widgets, dialogs and
+- **Two real apps, ~155 test cases.** ApiDemos for native widgets, dialogs and
   data-driven scrollable-list navigation across the whole screen tree; the production
   Wikipedia app for search → article → save, find-in-page and bottom-nav journeys.
 - **AI-assisted workflow.** [`CLAUDE.md`](CLAUDE.md) plus the subagents and skills in
@@ -76,8 +76,8 @@ Or via the `Makefile`: `make apps`, `make compile`, `make smoke`, `make apidemos
 |---|---|---|
 | ApiDemos — screen-tree navigation | `TopLevelMenuTest`, `LeafScreenNavigationTest` | 80 |
 | ApiDemos — widgets & dialogs | `ControlsWidgetTest`, `SeekBarTest`, `ChronometerTest`, `SpinnerTest`, `RadioGroupTest`, `ExpandableListsTest`, `PopupMenuTest`, `DateWidgetsTest`, `AlertDialogsTest`, `ApiDemosTest` | 56 |
-| Wikipedia — search, article, navigation, saved, settings | `WikipediaSearchTest`, `WikipediaArticleTest`, `WikipediaNavigationTest`, `WikipediaSavedTest`, `WikipediaSettingsTest`, `WikipediaTest` | 18 |
-| **Total** | | **150+** |
+| Wikipedia — search, article, navigation, saved, settings | `WikipediaSearchTest`, `WikipediaArticleTest`, `WikipediaNavigationTest`, `WikipediaSavedTest`, `WikipediaSettingsTest`, `WikipediaTest` | 19 |
+| **Total** | | **155** |
 
 Data-driven cases use TestNG `@DataProvider`; navigation is by visible text + `UiScrollable`,
 never by index or coordinates.

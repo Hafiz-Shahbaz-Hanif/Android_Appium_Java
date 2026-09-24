@@ -2,6 +2,13 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-09-24
+
+### Fixed
+- README's Wikipedia row said 18 cases after the Settings-screen addition;
+  the actual per-class sum is 19 (total 155, not "150+"). Recounted every
+  `@Test` + `@DataProvider` row across every test class.
+
 ## 2026-09-23
 
 ### Added
