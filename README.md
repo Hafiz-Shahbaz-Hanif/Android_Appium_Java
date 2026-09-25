@@ -4,6 +4,8 @@
 ![Java](https://img.shields.io/badge/Java-17%2B-ED8B00?logo=openjdk&logoColor=white)
 ![Appium](https://img.shields.io/badge/Appium-2.x-662D91?logo=appium&logoColor=white)
 ![TestNG](https://img.shields.io/badge/TestNG-7.x-DE322F)
+![ExtentReports](https://img.shields.io/badge/Report-ExtentReports-FF7043)
+![Tests](https://img.shields.io/badge/tests-155-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 
 A native **Android** UI automation framework built with **Appium 2**, the **Java client** and
