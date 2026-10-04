@@ -2,6 +2,15 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-04
+
+### Fixed
+- `CLAUDE.md` wrongly said to "filter with a profile, not `-Dgroups`" because
+  surefire is driven by a suite XML. Surefire does apply `-Dgroups` on top of a
+  suite XML (verified on the identical setup in Selenium_Java: a non-existent
+  group selects 0 tests). The note is corrected and the README now lists the
+  groups actually in use, plus the `make clean` target it had omitted.
+
 ## 2026-09-25
 
 ### Added

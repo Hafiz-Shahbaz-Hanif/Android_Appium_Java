@@ -70,7 +70,11 @@ bash scripts/fetch-apps.sh          # or: pwsh scripts/fetch-apps.ps1
 ```
 
 Or via the `Makefile`: `make apps`, `make compile`, `make smoke`, `make apidemos`,
-`make wikipedia`, `make test` (`make help` lists them).
+`make wikipedia`, `make test`, `make clean` (`make help` lists them).
+
+Any TestNG group can also be selected on top of a suite, e.g.
+`./mvnw test -Dgroups=navigation` (groups in use: `apidemos`, `wikipedia`, `smoke`,
+`navigation`, `widgets`, `dialogs`, `article`, `search`).
 
 ## Test coverage
 

@@ -68,11 +68,15 @@ bash scripts/fetch-apps.sh
 ./mvnw test -Psmoke              # @smoke group across both apps
 ./mvnw test -Papidemos          # ApiDemos suite only
 ./mvnw test -Pwikipedia         # Wikipedia suite only
+./mvnw test -Dgroups=navigation  # any TestNG group, on top of whichever suite is selected
 ./mvnw -q test-compile           # what a machine without an SDK can do
 ```
 
-Each profile swaps `suite.file` (see `pom.xml`); surefire is driven by a TestNG suite
-XML, so filter with a profile, not `-Dgroups`.
+Each profile swaps `suite.file` (see `pom.xml`). Surefire still applies `-Dgroups` on top
+of a suite XML — checked against the identical surefire + suite-XML setup in the sibling
+Selenium_Java repo, where `-Dgroups=doesnotexist` selects zero tests. (This repo can't be
+run that way without Appium + an emulator, so the claim is by shared mechanism, not
+re-run here.)
 
 ## Definition of done
 
