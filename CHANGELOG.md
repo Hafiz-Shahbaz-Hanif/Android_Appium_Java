@@ -2,6 +2,20 @@
 
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
+## 2026-10-21
+
+### Changed
+- Dependabot config tuned after its first weekly run opened ~10 separate PRs, one of
+  which bumped `io.appium:java-client` to 10.x on its own. The pom pins Selenium at
+  4.33 because java-client 9.4.0 still uses APIs removed in 4.34, so the two are a
+  matched pair: `io.appium:*` and `org.seleniumhq.selenium:*` are now one group and
+  can't be bumped separately. Build tooling (surefire plugin, Maven wrapper version)
+  is one PR; the remaining minor/patch bumps are batched; GitHub Actions updates are
+  batched; commit messages use the repo's `chore(deps)` / `ci(deps)` convention.
+  Validated against the official Dependabot JSON schema. Note this repo is
+  compile-verified only (no emulator here), so any such grouped bump still needs the
+  CI emulator job to confirm before merging.
+
 ## 2026-10-04
 
 ### Fixed

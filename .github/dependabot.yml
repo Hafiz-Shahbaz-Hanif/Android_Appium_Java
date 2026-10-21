@@ -5,8 +5,33 @@ updates:
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore(deps)"
+    groups:
+      # java-client is built against a specific Selenium range (the pom pins Selenium 4.33
+      # because java-client 9.4.0 still uses APIs removed in 4.34), so the two must be
+      # bumped together - never one without the other.
+      appium-and-selenium:
+        patterns:
+          - "io.appium:*"
+          - "org.seleniumhq.selenium:*"
+      # Build tooling (surefire plugin, Maven itself) moves as one reviewable PR.
+      maven-tooling:
+        patterns:
+          - "org.apache.maven.plugins:*"
+          - "org.apache.maven:*"
+      minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+    commit-message:
+      prefix: "ci(deps)"
+    groups:
+      actions:
+        patterns:
+          - "*"
